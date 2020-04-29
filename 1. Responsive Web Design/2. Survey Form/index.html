@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Survey</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="main">
+      <h1 id="title">Music Form</h1>
+      <h3 id="description">Tell us what music you like!</h3>
+      <div id="survey-section">
+        <div id="icon-div">
+          <img
+            src="https://www.dropbox.com/s/3ccquhmzuibrn5m/Music%20icon.png?raw=1"
+            id="icon"
+            alt="music-icon"
+          />
+        </div>
+        <form id="survey-form">
+          <label id="name-label" for="name">Name:</label><br />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value="Enter your name"
+            required
+            placeholder="Please enter your name"
+          /><br />
+
+          <label id="email-label" for="email">Email:</label><br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value="Please enter your email"
+            required
+            placeholder="Please enter your email"
+          /><br />
+
+          <label id="number-label" for="number">Number:</label><br />
+          <input
+            type="number"
+            id="number"
+            name="number"
+            value="9999999999"
+            required
+            minlength="7"
+            maxlength="10"
+            max="9999999999"
+            min="1111111"
+            placeholder="Please enter your number"
+          /><br />
+
+          <label for="cars">Choose your favorite music genre:</label><br />
+
+          <select id="dropdown" value="genre">
+            <option value="pop">Pop</option>
+            <option value="rock">Rock</option>
+            <option value="metal">Metal</option>
+            <option value="hip-hop">Hip Hop</option>
+            <option value="country">Country</option>
+            <option value="electronic">Electronic</option>
+          </select>
+
+          <p>How often do you listen to music?</p>
+          <input
+            type="radio"
+            id="day-multiple"
+            name="listen"
+            value="day-m"
+            class="radio-class"
+          />
+          <label for="day">Multiple times a day</label><br />
+          <input
+            type="radio"
+            id="day-once"
+            name="listen"
+            value="day-o"
+            class="radio-class"
+          />
+          <label for="week">At least once a day</label><br />
+          <input
+            type="radio"
+            id="week-multiple"
+            name="listen"
+            value="week-m"
+            class="radio-class"
+          />
+          <label for="month">Multiple times a week</label><br />
+          <input
+            type="radio"
+            id="week-once"
+            name="listen"
+            value="week-o"
+            class="radio-class"
+          />
+          <label for="month">At least once a week</label><br />
+          <input
+            type="radio"
+            id="week-less"
+            name="listen"
+            value="week-l"
+            class="radio-class"
+          />
+          <label for="month">Less than once a week</label><br />
+
+          <p>How do you listen to music?</p>
+          <input
+            type="checkbox"
+            id="phone"
+            value="phone"
+            class="checkbox-class"
+          />
+          <label for="phone">On my phone</label><br />
+          <input
+            type="checkbox"
+            id="computer"
+            value="computer"
+            class="checkbox-class"
+          />
+          <label for="computer">On my computer</label><br />
+          <input
+            type="checkbox"
+            id="radio"
+            value="radio"
+            class="checkbox-class"
+          />
+          <label for="radio">On the radio</label><br />
+          <input type="checkbox" id="car" value="car" class="checkbox-class" />
+          <label for="car">In the car</label><br />
+
+          <p>What formats of music do you use?</p>
+          <input
+            type="checkbox"
+            id="vinyl"
+            value="vinyl"
+            class="checkbox-class"
+          />
+          <label for="vinyl">Vinyl</label><br />
+          <input type="checkbox" id="cds" value="cds" class="checkbox-class" />
+          <label for="cds">CDs</label><br />
+          <input
+            type="checkbox"
+            id="cassette"
+            value="cassette"
+            class="checkbox-class"
+          />
+          <label for="cassette">Cassette Tapes</label><br />
+          <input
+            type="checkbox"
+            id="files"
+            value="files"
+            class="checkbox-class"
+          />
+          <label for="files">Digital Files</label><br />
+          <input
+            type="checkbox"
+            id="streaming"
+            value="streming"
+            class="checkbox-class"
+          />
+          <label for="streaming">Streaming Services</label><br />
+
+          <br />
+          <label for="info-text">Additional info:</label>
+          <br />
+          <textarea id="info-text" rows="8"> </textarea>
+          <br />
+          <div id="btn">
+            <button type="submit" id="submit" value="submit" type="submit">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

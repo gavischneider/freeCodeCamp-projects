@@ -1,0 +1,68 @@
+#main {
+  background-color: #f3c623;
+  padding: 30px;
+}
+
+#icon-div {
+  margin: 10px;
+  text-align: center;
+}
+
+#icon {
+  width: 10%;
+}
+
+#title {
+  text-align: center;
+  color: #10375c;
+}
+
+#description {
+  text-align: center;
+  color: #10375c;
+}
+
+#survey-section {
+  border-radius: 25px;
+  background-color: #844685;
+  width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  line-height: 1.5;
+}
+
+input {
+  width: 100%;
+  margin: 0 auto;
+}
+
+#dropdown {
+  width: 100%;
+}
+
+.radio-class {
+  width: 25px;
+}
+
+.checkbox-class {
+  width: 25px;
+}
+
+#info-text {
+  width: 100%;
+}
+
+#btn {
+  margin: 0 auto;
+  width: 65px;
+  text-align: center;
+}
+
+button {
+  background-color: #10375c;
+  color: white;
+  border-radius: 25px;
+  height: 30px;
+  width: 70px;
+  margin: 15px 0;
+}
