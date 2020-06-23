@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - freeCodeCamp Project #14 - JavaScript Calculator</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="calcContainer">
+  <div class='topRow'>
+    <button class='clearButton' id='clear'>C</button>
+    <div id="display"></div>
+  </div>
+  <div class='buttonContainer'>
+    <div class='row'>
+      <button class="numberButton btn" id="seven" data-value="7">7</button>
+      <button class="numberButton btn" id='eight' data-value="8">8</button>
+      <button class="numberButton btn" id='nine' data-value="9">9</button>
+      <button class="operator btn" id='divide' data-value='/'>/</button>
+    </div>
+    <div class='row'>
+      <button class="numberButton btn" id='four' data-value="4">4</button>
+      <button class="numberButton btn" id='five' data-value="5">5</button>
+      <button class="numberButton btn" id='six' data-value="6">6</button>
+      <button class="operator btn" id='multiply' data-value='X'>X</button>
+    </div>
+    <div class='row'>
+      <button class="numberButton btn" id='one' data-value="1">1</button>
+      <button class="numberButton btn" id='two' data-value="2">2</button>
+      <button class="numberButton btn" id='three' data-value="3">3</button>
+      <button class="operator btn" id='subtract' data-value='-'>-</button>
+    </div>
+    <div class='row'>
+      <button class="numberButton btn" id='zero' data-value="0">0</button>
+      <button class="btn" id='decimal'>.</button>
+      <button class="btn" id="equals">=</button>
+      <button class="operator btn" id='add' data-value='+'>+</button>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
