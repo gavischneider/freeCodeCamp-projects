@@ -1,0 +1,35 @@
+<div class='appContainer'>
+  <div class='content'>
+    <div class='textContainer'>
+      <h1>Pomodoro Clock</h1>
+    </div>
+    <div class='settingsContainer'>
+      <div class='break'>
+        <h2 id="break-label">Break Length</h2>
+        <div class='breakContent'>
+          <button class='leftArrow' id="break-decrement"><i class="fa fa-arrow-down"></i></button>
+          <div class='breakDisplay' id="break-length">5</div>
+          <button class='rightArrow' id="break-increment"><i class="fa fa-arrow-up"></i></button>
+        </div>
+      </div>
+      <div class='session'>
+        <h2 id="session-label">Session Length</h2>
+        <div class='sessionContent'>
+          <button class='leftArrow' id="session-decrement"><i class="fa fa-arrow-down"></i></button>
+          <div class='sessionDisplay' id="session-length" value='25'>25</div>
+          <button class='rightArrow' id="session-increment"><i class="fa fa-arrow-up"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class='clockContainer'>
+      <h2 id="timer-label">Session</h2>
+      <div id="time-left">25:00</div>
+    </div>
+    <div class='startContainer'>
+      <button id="start_stop"><i class="fa fa-play"></i></button>
+      <button id="reset"><i class="fa fa-power-off"></i></button>
+      <audio id='beep' src='https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg'></audio>
+    </div>
+    <div class='footer'></div>
+  </div>
+</div>

@@ -1,0 +1,118 @@
+$mainColor: #4cd3c2;
+$complimentColor: #fe346e;
+
+body{
+  background-color: $mainColor;
+}
+
+.appContainer{
+  padding: 50px;
+}
+
+.content{
+  width: 60%;
+  margin: 0 auto;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+}
+
+.settingsContainer{
+  display: flex;
+  justify-content: center;
+}
+
+.break{
+  margin: 10px;
+}
+
+.breakContent{
+  display: flex;
+  justify-content: center;
+}
+
+.session{
+  margin: 10px;
+}
+
+.sessionContent{
+  display: flex;
+  justify-content: center;
+}
+
+.leftArrow{
+  margin: 20px;
+}
+
+.rightArrow{
+  margin: 20px;
+}
+
+.breakDisplay,
+.sessionDisplay{
+  font-size: 2em;
+  padding: 28px;
+}
+
+.clockContainer{
+  border: 2px solid $complimentColor;
+  width: 40%;
+  margin: 0 auto;
+  padding: 30px;
+  padding-bottom: 50px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  font-size: 2em;
+}
+
+.startContainer{
+  //border: 2px solid black;
+  width: 50%;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+button{
+  background-color: $mainColor; 
+  border: none; 
+  color: $complimentColor; 
+  padding: 12px 16px; 
+  font-size: 25px; 
+  cursor: pointer; 
+  outline: none;
+}
+
+button:hover {
+  color: #b7efcd;
+}
+
+h1{
+  font-size: 2.5em;
+}
+
+#start_stop, #reset{
+  font-size: 40px; 
+}
+
+#time-left{
+  font-family: digital;
+  font-size: 2.5em;
+}
+
+@font-face {
+  font-family: "Digital";
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot");
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff") format("woff"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7") format("svg");
+}
+
+@media only screen and (max-width: 800px) {
+  .clockContainer{
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .clockContainer{
+    width: 60%;
+  }
+}
