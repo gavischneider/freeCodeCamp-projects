@@ -1,0 +1,138 @@
+const educationUrl = 'https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/for_user_education.json';
+
+const countiesUrl = 'https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/counties.json';
+
+    d3.queue()
+    .defer(d3.json, countiesUrl)
+    .defer(d3.json, educationUrl)
+    .await(ready);
+
+function ready(error, countiesData, educationData) {
+  if (error) throw error;
+    
+    const width = 950;
+    const height = 600;
+    const padding = 70;
+    
+    const education = educationData;
+    const counties = countiesData;
+  
+    // Match up the data from the two urls
+    let dataByFIPS = {};
+    education.forEach((d) => dataByFIPS[d.fips] = d.bachelorsOrHigher);
+    let stateByFIPS = {};
+    education.forEach((d) => stateByFIPS[d.fips] = d.state);
+    let countyByFIPS = {};
+    education.forEach((d) => countyByFIPS[d.fips] = d.area_name);
+    
+    // Create an SVG element
+    const svg = d3.select("body")
+      .append('svg')
+      .attr('width', width)
+      .attr('height', height)
+      .attr('class', 'choropleth-map');
+
+  const [minBachelorOrHiger, maxBachelorOrHiger] = [
+    ...d3.extent(educationData.map(v => v.bachelorsOrHigher))];
+  
+    // Set colors scale
+    let colors = d3.scaleThreshold()
+    //.domain(d3.range(2.6, 75.1, (75.1-2.6)/8))
+    .domain(d3.range(9).map(v => v * ((maxBachelorOrHiger - minBachelorOrHiger) / 9) + minBachelorOrHiger))
+    .range(d3.schemePurples[9]);
+  
+  // Set x scale
+  const xScale = d3.scaleLinear()
+    .domain([minBachelorOrHiger - (maxBachelorOrHiger - minBachelorOrHiger) / 9, maxBachelorOrHiger])
+    .range([width - (10) * 30, width]);
+
+   
+    // Draw the map
+const path = d3.geoPath();
+    svg.selectAll("path")  
+       .data(topojson.feature(countiesData, countiesData.objects.counties).features) 
+      .enter()
+      .append("path")
+      .attr("d", path)  
+      .attr('class', 'county')
+      .attr('data-fips', d => {
+        return d.id;
+    })
+      .attr("data-education", function(d) {
+        let result = educationData.filter(function( obj ) {
+          return obj.fips == d.id;
+        });
+        if(result[0]){
+          return result[0].bachelorsOrHigher
+        }
+        //could not find a matching fips id in the data
+        console.log('could find data for: ', d.id);
+        return 0;
+       })
+      .attr("fill", function(d) { 
+        var result = educationData.filter(function( obj ) {
+          return obj.fips == d.id;
+        });
+        if(result[0]){
+          return colors(result[0].bachelorsOrHigher)
+        }
+        //could not find a matching fips id in the data
+        return colors(0)
+       }).on("mouseover", (d) => {
+               tooltipOn(d);
+               d3.select("#tooltip")
+                 .style("left", d3.event.pageX - 50 + "px")
+                 .style("top", d3.event.pageY + 20 + "px")
+             })
+          .on("mouseout", () => tooltipOff());
+  
+   // Tooltip
+  function tooltipOn(d) {
+    d3.select("body")
+      .append("div")
+      .attr("id", "tooltip")
+      .attr("data-education", dataByFIPS[d.id])
+      .style("position", "absolute")
+      .html(countyByFIPS[d.id] + ", " + stateByFIPS[d.id] + "</br>" + dataByFIPS[d.id] + "%");
+  }
+
+   function tooltipOff(){
+    d3.select("#tooltip").remove()
+   }
+  
+  // Legend
+  const legend = svg
+    .append("g")
+    .attr("id", "legend")
+    .attr("transform", "translate(-90," + 5 + ")");
+  
+  legend.selectAll("rect")
+    .data(
+      colors.range().map(d => {
+        d = colors.invertExtent(d);
+        if (d[0] == null) d[0] = xScale.domain()[0];
+        if (d[1] == null) d[1] = xScale.domain()[1];
+        return d;
+      })
+    )
+    .enter()
+    .append("rect")
+    .attr("height", 30)
+    .attr("x", d => xScale(d[0]))
+    .attr("width", d => 30)
+    .attr("fill", d => colors(d[0]));
+  
+ legend.append("g")
+    .attr("transform", "translate(" + 30 * -1 + ", 0)")
+    .call(
+      d3
+      .axisBottom(xScale)
+      .tickSize(30)
+      .tickFormat((x, i) => {
+        return i ? Math.round(x) : Math.round(x) + "%";
+      })
+      .tickValues(colors.domain())
+    )
+    .select(".domain")
+    .remove();
+}
