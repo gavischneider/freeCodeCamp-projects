@@ -1,0 +1,20 @@
+body{
+  padding: 50px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.tree-map{
+  background-color: light-grey;  
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border: 1px solid black;
+  padding: 10px;
+}
+
+#tooltip {
+  background-color: white;
+  border: 1px solid;
+  padding: 2px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
