@@ -28,3 +28,10 @@ All the freeCodeCamp projects that I completed in order to receive the Full Stac
 3. Visualize Data with a Heat Map
 4. Visualize Data with a Choropleth Map
 5. Visualize Data with a Treemap Diagram
+
+## APIs and Microservices
+1. Timestamp Microservice
+2. Request Header Parser Microservice
+3. URL Shortener Microservice
+4. Exercide Tracker
+5. File Metadata Microservice
