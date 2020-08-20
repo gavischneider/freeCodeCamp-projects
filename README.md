@@ -35,3 +35,10 @@ All the freeCodeCamp projects that I completed in order to receive the Full Stac
 3. URL Shortener Microservice
 4. Exercide Tracker
 5. File Metadata Microservice
+
+## Information Security and Quality Assurance
+1. Metric-Imperial Converter
+2. Issue Tracker
+3. Personal Library
+4. Stock Price Checker
+5. Anonymous Message Board
