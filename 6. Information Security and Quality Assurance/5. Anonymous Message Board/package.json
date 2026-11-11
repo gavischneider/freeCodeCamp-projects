@@ -19,7 +19,7 @@
 		"mocha": "^3.2.0",
 		"zombie": "^5.0.5",
 		"helmet": "^3.1.0",
-    "mongoose": "8.24.1"
+    "mongoose": "8.24.7"
 	},
 	"engines": {
 		"node": "4.4.3"
